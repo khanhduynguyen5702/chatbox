@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Chat Widget</title>
+    <link rel="stylesheet" href="/widget.css">
+  </head>
+  <body>
+    <div id="widget-root">
+      <header class="w-header">
+        <span>Test Chat</span>
+        <button id="w-close" aria-label="Close">✕</button>
+      </header>
+      <main id="w-messages" class="w-messages" aria-live="polite"></main>
+      <form id="w-form" class="w-form">
+        <input id="w-input" autocomplete="off" placeholder="Type a message..." />
+        <button type="submit">Send</button>
+      </form>
+    </div>
+    <script src="/widget-iframe.js"></script>
+  </body>
+</html>
+
