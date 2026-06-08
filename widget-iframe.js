@@ -8,7 +8,7 @@
   const STORAGE_KEY = 'test_chat_widget_messages_v1';
 
   function loadMessages(){
-    try{ return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]') }catch(e){return []}
+    try{ return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]') }catch{return []}
   }
   function saveMessages(arr){ localStorage.setItem(STORAGE_KEY, JSON.stringify(arr)) }
 
@@ -60,7 +60,7 @@
 
   closeBtn.addEventListener('click', ()=>{
     // tell parent to hide the iframe
-    try{ parent.postMessage({type:'widget-close'}, '*') }catch(e){}
+    try{ parent.postMessage({type:'widget-close'}, '*') }catch{ void 0 }
   });
 
   function generateReply(userText){
@@ -76,6 +76,6 @@
   render();
 
   // notify parent that iframe is ready
-  try{ parent.postMessage({type:'widget-ready'}, '*') }catch(e){}
+  try{ parent.postMessage({type:'widget-ready'}, '*') }catch{ void 0 }
 })();
 

@@ -49,7 +49,7 @@
         if(ev.data.type === 'widget-close'){
           frameWrapper.style.display = 'none';
         }
-      }catch(e){}
+      }catch{ void 0 }
     });
 
     document.body.appendChild(container);
